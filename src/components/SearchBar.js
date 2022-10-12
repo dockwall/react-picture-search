@@ -1,8 +1,8 @@
 import React from "react";
 
 class SearchBar extends React.Component {
-    onInputChange(evt) {
-        console.log(evt.target.value)
+    state = {
+        searchTerm: ''
     }
 
     onFormSubmit(evt) {
@@ -16,7 +16,13 @@ class SearchBar extends React.Component {
                 <form className="ui form" onSubmit={this.onFormSubmit}>
                     <div className="field">
                         <label>Enter phrase for search image</label>
-                        <input type="text" onChange={this.onInputChange}></input>
+                        <input
+                            type="text"
+                            value={this.state.searchTerm}
+                            onChange={(e) => {
+                                this.setState({ searchTerm: (e.target.value) });
+                            }}
+                        />
                     </div>
                 </form >
             </div >
