@@ -1,5 +1,5 @@
 import React from "react";
-import axios from 'axios';
+import unsplash from "../api/unsplash"
 import SearchBar from "./SearchBar";
 
 class App extends React.Component {
@@ -9,15 +9,10 @@ class App extends React.Component {
     }
 
     onSearchSubmit = async (searchTerm) => {
-        // EasterEgg: this is my unsplash public token
-        const response = await axios.get('https://api.unsplash.com/search/photos',
+        const response = await unsplash.get('/search/photos',
             {
                 params: {
                     query: searchTerm,
-                },
-
-                headers: {
-                    Authorization: 'Client-ID ulLTB12UZMQQ2WBv_MLqHA4aX5KljpsODsgDRbWPXDE',
                 },
             });
 
