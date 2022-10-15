@@ -4,9 +4,13 @@ import SearchBar from "./SearchBar";
 
 class App extends React.Component {
 
-    onSearchSubmit(searchTerm) {
+    state = {
+        images: []
+    }
+
+    onSearchSubmit = async (searchTerm) => {
         // EasterEgg: this is my unsplash public token
-        axios.get('https://api.unsplash.com/search/photos',
+        const response = await axios.get('https://api.unsplash.com/search/photos',
             {
                 params: {
                     query: searchTerm,
@@ -15,8 +19,9 @@ class App extends React.Component {
                 headers: {
                     Authorization: 'Client-ID ulLTB12UZMQQ2WBv_MLqHA4aX5KljpsODsgDRbWPXDE',
                 },
-            }
-        )
+            });
+
+        this.setState({ images: response.data.results });
     }
 
     render() {
@@ -26,6 +31,7 @@ class App extends React.Component {
                 style={{ marginTop: '15px' }}
             >
                 <SearchBar onSubmit={this.onSearchSubmit} />
+                Found: {this.state.images.length} images
             </div>
         );
     }
