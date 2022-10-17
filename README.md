@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## What does it do?
+
+This app accepts a text query, then sends request to unsplash.com and render images from response.
+
+## How it works?
+
+Pictures - Unsplash API
+Requests - Axios
+Styles - Semantic UI.
+
 ## Available Scripts
 
 In the project directory, you can run:
