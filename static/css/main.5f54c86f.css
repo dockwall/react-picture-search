@@ -1,0 +1,2 @@
+.image-list{grid-gap:0 10px;display:grid;grid-auto-rows:10px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}.image-list img{grid-row-end:span 2;width:250px}
+/*# sourceMappingURL=main.5f54c86f.css.map*/
