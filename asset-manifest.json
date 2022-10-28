@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/dockwall.github.io/react-picture-search/static/css/main.5f54c86f.css",
-    "main.js": "/dockwall.github.io/react-picture-search/static/js/main.d1b3488c.js",
-    "index.html": "/dockwall.github.io/react-picture-search/index.html",
-    "main.5f54c86f.css.map": "/dockwall.github.io/react-picture-search/static/css/main.5f54c86f.css.map",
-    "main.d1b3488c.js.map": "/dockwall.github.io/react-picture-search/static/js/main.d1b3488c.js.map"
+    "main.css": "/react-picture-search/static/css/main.5f54c86f.css",
+    "main.js": "/react-picture-search/static/js/main.d1b3488c.js",
+    "index.html": "/react-picture-search/index.html",
+    "main.5f54c86f.css.map": "/react-picture-search/static/css/main.5f54c86f.css.map",
+    "main.d1b3488c.js.map": "/react-picture-search/static/js/main.d1b3488c.js.map"
   },
   "entrypoints": [
     "static/css/main.5f54c86f.css",
