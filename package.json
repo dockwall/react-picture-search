@@ -2,7 +2,7 @@
   "name": "picture-search",
   "version": "0.1.0",
   "private": true,
-  "homepage": "dockwall.github.io/react-picture-search",
+  "homepage": "https://dockwall.github.io/react-picture-search/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
