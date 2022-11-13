@@ -19,13 +19,18 @@ class App extends React.Component {
 
     render() {
         return (
-            <div
-                className="ui container"
-                style={{ paddingTop: '15px' }}
-            >
-                <h1> Hello! This is the App to search for various pictures on Unsplash. Try it!</h1>
-                <SearchBar onSubmit={this.onSearchSubmit} />
-                <ImageList images={this.state.images} />
+            <div>
+                <div
+                    className="ui container"
+                    style={{ paddingTop: '15px' }}
+                >
+                    <h1 className="ui center aligned header">
+                        Hello! This is the App to search for various pictures on Unsplash. Try it!
+                    </h1>
+                    <SearchBar onSubmit={this.onSearchSubmit} />
+                    <ImageList images={this.state.images} />
+                </div>
+
             </div>
         );
     }
