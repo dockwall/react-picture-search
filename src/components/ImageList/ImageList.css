@@ -1,0 +1,17 @@
+.image-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-list img {
+  box-sizing: border-box;
+  height: 200px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.image-list img:hover {
+  box-shadow: 0px 0px 25px grey;
+}

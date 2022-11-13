@@ -1,4 +1,5 @@
 import React from "react";
+import { faker } from "@faker-js/faker"
 
 class SearchBar extends React.Component {
     state = {
@@ -19,8 +20,9 @@ class SearchBar extends React.Component {
                     onSubmit={this.onFormSubmit}
                 >
                     <div className="field">
-                        <label>Enter phrase for search image</label>
+                        <label>Enter a some search phrase, like...</label>
                         <input
+                            placeholder={faker.animal.type()}
                             type="text"
                             value={this.state.searchTerm}
                             onChange={(e) => {
