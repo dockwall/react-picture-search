@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
                     onSubmit={this.onFormSubmit}
                 >
                     <div className="field">
-                        <label>Enter a some search phrase, like...</label>
+                        <label>Enter your search phrase, like...</label>
                         <input
                             placeholder={faker.animal.type()}
                             type="text"
