@@ -6,34 +6,44 @@ class Message extends React.Component {
         this.messageRef = React.createRef();
     }
 
-    status = this.props.status
-
     styles = {
+        inactive: {
+            messageStyle: 'hidden',
+        },
+
+        fetch: {
+            messageStyle: 'icon',
+            title: 'Just one second',
+            text: 'We\'re fetching that content for you.'
+        },
+
         error: {
-            messageColor: 'red',
+            messageStyle: 'negative',
             title: 'Oops!',
             text: 'No images found on Unsplash matching your search'
         },
 
-        fetch: {
-            messageColor: '',
-            title: 'Just one second',
-            text: "We're fetching that content for you."
+        success: {
+            messageStyle: 'positive',
+            title: 'Wonderful!',
+            text: 'Pictures found for your request, enjoy them!'
         }
     }
 
     render() {
+        const status = this.props.status;
+
         return (
-            <div className={`ui icon message ${this.styles[this.status].messageColor}`} ref={this.messageRef}>
-                {this.status === 'error' || this.status === 'success' ? null :
-                    <i className={`notched circle loading icon ${this.styles[this.status].loader}`}></i>
+            <div className={`ui icon message ${this.styles[status].messageStyle}`} ref={this.messageRef}>
+                {status === 'error' || status === 'success' ? null :
+                    <i className={`notched circle loading icon ${this.styles[status].loader}`}></i>
                 }
 
                 <div className="content">
                     <div className="header">
-                        {this.styles[this.status].title}
+                        {this.styles[status].title}
                     </div>
-                    <p>{this.styles[this.status].text}</p>
+                    <p>{this.styles[status].text}</p>
                 </div>
             </div>
         );

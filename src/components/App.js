@@ -7,17 +7,24 @@ import Message from "./Message/Message";
 class App extends React.Component {
 
     state = {
-        images: []
+        images: [],
+        messageStatus: 'inactive',
     }
 
     onSearchSubmit = async (searchTerm) => {
+        let status = 'fetch';
+
         const response = await unsplash.get('/search/photos', {
             params: { query: searchTerm }
         });
 
-        if (!response.data.results.length) response.data.results = 'error';
+        if (!response.data.results.length) status = 'error';
 
-        this.setState({ images: response.data.results });
+        this.setState({ images: response.data.results, messageStatus: status });
+    }
+
+    onLastLoad = () => {
+        this.setState({ messageStatus: 'success' })
     }
 
     render() {
@@ -30,15 +37,8 @@ class App extends React.Component {
                     Hello! This is the App to search for various pictures on Unsplash. Try it!
                 </h1>
                 <SearchBar onSubmit={this.onSearchSubmit} />
-
-                {Array.isArray(this.state.images) && this.state.images.length ?
-                    <div>
-                        <Message status='fetch' />
-                        <ImageList images={this.state.images} />
-                    </div> :
-                    this.state.images === 'error' ? <Message status='error' /> : null
-                }
-
+                <Message status={this.state.messageStatus} />
+                <ImageList images={this.state.images} onLastLoad={this.onLastLoad} />
             </div>
         );
     }
