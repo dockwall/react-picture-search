@@ -10,6 +10,7 @@
   height: 200px;
   margin: 5px;
   cursor: pointer;
+  outline: none;
 }
 
 .image-list img:hover {
