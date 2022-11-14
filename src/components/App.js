@@ -27,6 +27,10 @@ class App extends React.Component {
         this.setState({ messageStatus: 'success' })
     }
 
+    onCloseClick = () => {
+        this.setState({ messageStatus: 'inactive' })
+    }
+
     render() {
         return (
             <div
@@ -37,7 +41,7 @@ class App extends React.Component {
                     Hello! This is the App to search for various pictures on Unsplash. Try it!
                 </h1>
                 <SearchBar onSubmit={this.onSearchSubmit} />
-                <Message status={this.state.messageStatus} />
+                <Message status={this.state.messageStatus} onClick={this.onCloseClick} />
                 <ImageList images={this.state.images} onLastLoad={this.onLastLoad} />
             </div>
         );

@@ -1,30 +1,25 @@
 import React from "react";
 
 class Message extends React.Component {
-    constructor(props) {
-        super(props);
-        this.messageRef = React.createRef();
-    }
-
-    styles = {
+    config = {
         inactive: {
-            messageStyle: 'hidden',
+            style: 'hidden',
         },
 
         fetch: {
-            messageStyle: 'icon',
+            style: 'icon',
             title: 'Just one second',
             text: 'We\'re fetching that content for you.'
         },
 
         error: {
-            messageStyle: 'negative',
+            style: 'negative',
             title: 'Oops!',
-            text: 'No images found on Unsplash matching your search'
+            text: 'No images found on Unsplash matching your search',
         },
 
         success: {
-            messageStyle: 'positive',
+            style: 'positive',
             title: 'Wonderful!',
             text: 'Pictures found for your request, enjoy them!'
         }
@@ -34,18 +29,25 @@ class Message extends React.Component {
         const status = this.props.status;
 
         return (
-            <div className={`ui icon message ${this.styles[status].messageStyle}`} ref={this.messageRef}>
-                {status === 'error' || status === 'success' ? null :
-                    <i className={`notched circle loading icon ${this.styles[status].loader}`}></i>
-                }
-
-                <div className="content">
-                    <div className="header">
-                        {this.styles[status].title}
+            <div className="ui transition">
+                <div
+                    className={`ui icon message ${this.config[status].style}`}
+                >
+                    {status === 'error' || status === 'success' ?
+                        <i className='close icon'
+                            onClick={this.props.onClick}
+                        /> :
+                        <i className="notched circle loading icon" />
+                    }
+                    <div className="content">
+                        <div className="header">
+                            {this.config[status].title}
+                        </div>
+                        <p>{this.config[status].text}</p>
                     </div>
-                    <p>{this.styles[status].text}</p>
                 </div>
             </div>
+
         );
     }
 }
