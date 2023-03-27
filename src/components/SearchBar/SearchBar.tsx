@@ -10,7 +10,7 @@ interface State {
 }
 
 class SearchBar extends React.Component<Props, State> {
-  state = {
+  state: State = {
     searchTerm: "",
   };
 

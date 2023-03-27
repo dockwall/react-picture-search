@@ -1,19 +1,19 @@
 import React from "react";
 import "./ImageList.css";
 
-interface Image {
+export interface ImageData {
   description: string;
   urls: Record<string, string>;
   id: string;
 }
 
 interface Props {
-  images: Image[];
+  images: ImageData[];
   onLastLoad: () => void;
 }
 
 const ImageList = ({ images, onLastLoad }: Props) => {
-  const renderedImages = images.map((image: Image, index: number) => {
+  const renderedImages = images.map((image: ImageData, index: number) => {
     return (
       <img
         alt={image.description}
@@ -26,4 +26,5 @@ const ImageList = ({ images, onLastLoad }: Props) => {
 
   return <div className="image-list">{renderedImages}</div>;
 };
+
 export default ImageList;
