@@ -9,7 +9,7 @@ interface State {
   messageStatus: string;
 }
 
-class App extends React.Component<null, State> {
+class App extends React.Component<{}, State> {
   state: State = {
     images: [],
     messageStatus: "inactive",
